@@ -1,0 +1,11 @@
+<p>app works!</p>
+@if (loading$ | async) {
+    <h1>Loading...</h1>
+}
+@for (user of _users(); track user.id) {
+    <div class="user">
+        <p>id: {{ user.id }}</p>
+        <p>name: {{ user.name }}</p>
+        <button (click)="deleteUser(user.id)">delete user</button>
+    </div>
+}
